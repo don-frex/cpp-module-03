@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:49:47 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/17 16:29:17 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/17 16:31:24 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ ClapTrap::ClapTrap(void)
 {
 	name = "default";
 	HitPoints = 100;
-	EnergyPoints = 50;
-	AttackDamage = 20;
+	EnergyPoints = 100;
+	AttackDamage = 30;
 	std::cout << "ClapTrap default constructor called\n";
 }
 
@@ -26,14 +26,14 @@ ClapTrap::ClapTrap(std::string name)
 {
 	this->name = name;
 	HitPoints = 100;
-	EnergyPoints = 50;
-	AttackDamage = 20;
+	EnergyPoints = 100;
+	AttackDamage = 30;
 	std::cout << "ClapTrap " << name << " paramitrased constructor called\n";
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "ClapTrap " << name << " destryed\n";
+	std::cout << "ClapTrap destryed\n";
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
@@ -58,10 +58,10 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 void	ClapTrap::attack(const std::string& target)
 {
 	if (!this->HitPoints || !this->EnergyPoints)
-		std::cout << "ClapTrap " << name << " can't move" << std::endl;
+		std::cout << "ClapTrap " << "can't move " << name << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << name << " attack " << target << ", causing " << AttackDamage << " points of damage!\n";
+		std::cout << "ClapTrap " << name << " attack " << target << ", causing " << AttackDamage << "points of damage!\n";
 		EnergyPoints--;
 	}
 }
@@ -69,22 +69,20 @@ void	ClapTrap::attack(const std::string& target)
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if ((int) amount > HitPoints)
-	{
 		HitPoints = 0;
-		return;
-	}
-	HitPoints -= amount;
+	else
+		HitPoints -= amount;
 	std::cout << "ClapTrap " << name << " taken " << amount << ", resault now: " << HitPoints << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (!this->HitPoints || !this->EnergyPoints)
-	{
 		std::cout << "ClapTrap " << "can't move " << name << std::endl;
-		return;
-	}
+	else
+	{
+		std::cout << "ClapTrap " << name << " repaired his health\n";
 		HitPoints += amount;
-		std::cout << "ClapTrap " << name << " add in his health " << amount << " and now " << this->HitPoints << std::endl;
 		EnergyPoints--;
+	}
 }

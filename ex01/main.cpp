@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:15:35 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/17 00:38:10 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/17 16:01:35 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 int	main(void)
 {
-	ScavTrap a("A");
-	ScavTrap b("B");
+	int i;
 
-	a.attack("B");
-	b.takeDamage(5);
-	b.beRepaired(3);
-	b.attack("A");
-	a.takeDamage(10);
-	a.beRepaired(10);
-	a.guardGate();
+	i = 1;
+	ScavTrap a("A");
+	
+	while(i<= 50)
+	{
+		std::cout << i << std::endl;
+		a.takeDamage(5);
+		a.attack("ssss");
+		a.guardGate();
+		i++;
+	}
 	return (0);
 }

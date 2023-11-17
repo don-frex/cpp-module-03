@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:30:58 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/17 00:30:45 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/17 16:28:36 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ScavTrap::ScavTrap(void)
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->name = name;
-	HitPoints = 50;
+	HitPoints = 100;
 	EnergyPoints = 50;
 	AttackDamage = 20;
 	std::cout << "ScavTrap " << name << " paramitrased constructor called\n";
