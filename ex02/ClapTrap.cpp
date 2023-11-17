@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:49:47 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/17 16:31:24 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/17 16:47:03 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 void	ClapTrap::attack(const std::string& target)
 {
 	if (!this->HitPoints || !this->EnergyPoints)
-		std::cout << "ClapTrap " << "can't move " << name << std::endl;
+		std::cout << "ClapTrap " << "dieded " << name << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << name << " attack " << target << ", causing " << AttackDamage << "points of damage!\n";
+		std::cout << "ClapTrap " << name << " attack " << target << ", causing " << AttackDamage << " points of damage!\n";
 		EnergyPoints--;
 	}
 }
@@ -78,7 +78,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (!this->HitPoints || !this->EnergyPoints)
-		std::cout << "ClapTrap " << "can't move " << name << std::endl;
+		std::cout << "ClapTrap " << "dieded " << name << std::endl;
 	else
 	{
 		std::cout << "ClapTrap " << name << " repaired his health\n";

@@ -6,7 +6,7 @@
 /*   By: asaber <asaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 22:15:35 by asaber            #+#    #+#             */
-/*   Updated: 2023/11/17 15:53:31 by asaber           ###   ########.fr       */
+/*   Updated: 2023/11/17 17:09:20 by asaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	ClapTrap ct("Adnane");
+	ClapTrap ct("smith");
 	int i;
 
 	i=1;
